@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio showcase video by [Your Name]">
     <meta name="twitter:card" content="player"> <!-- For X video preview -->
-    <meta name="twitter:title" content="[Your Name] Portfolio Video">
+    <meta name="twitter:title" content="Saka Portfolio Video">
     <meta name="twitter:description" content="Watch my latest work!">
-    <meta name="twitter:image" content="[URL-to-video-thumbnail]">
-    <meta name="twitter:player" content="[URL-to-this-page]">
+    <meta name="twitter:image" content="https://port-njjc.onrender.com/port/thumbnail.jpg"> 
+    <meta name="twitter:player" content="https://port-njjc.onrender.com/">
     <meta name="twitter:player:width" content="640">
     <meta name="twitter:player:height" content="360">
-    <title>[Your Name] Portfolio Video</title>
+    <title> Portfolio Video</title>
     <style>
         body {
             margin: 0;
@@ -52,7 +52,7 @@
         video.addEventListener('ended', function() {
             // Show redirect message
             redirectMessage.style.display = 'block';
-            let seconds = 3;
+            let seconds = 1;
             countdownElement.textContent = seconds;
 
             // Countdown timer
@@ -62,7 +62,7 @@
                 if (seconds <= 0) {
                     clearInterval(countdown);
                     // Redirect to portfolio site
-                    window.location.href = '[https://your-portfolio-site.com]';
+                    window.location.href = 'https://git-scm.com/install/windows';
                 }
             }, 1000);
         });
