@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio showcase video by [Your Name]">
+    <meta name="twitter:card" content="player"> <!-- For X video preview -->
+    <meta name="twitter:title" content="[Your Name] Portfolio Video">
+    <meta name="twitter:description" content="Watch my latest work!">
+    <meta name="twitter:image" content="[URL-to-video-thumbnail]">
+    <meta name="twitter:player" content="[URL-to-this-page]">
+    <meta name="twitter:player:width" content="640">
+    <meta name="twitter:player:height" content="360">
+    <title>[Your Name] Portfolio Video</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #fff;
+            border-radius: 8px;
+        }
+        #redirect-message {
+            display: none;
+            color: #fff;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay controls>
+        <source src="20251001_104912.mp4" type="video/mp4" >
+        Your browser doesn't support video playback.
+    </video>
+    <div id="redirect-message">Redirecting to portfolio in <span id="countdown">3</span> seconds...</div>
+    <script>
+        const video = document.querySelector('video');
+        const redirectMessage = document.getElementById('redirect-message');
+        const countdownElement = document.getElementById('countdown');
+
+        video.addEventListener('ended', function() {
+            // Show redirect message
+            redirectMessage.style.display = 'block';
+            let seconds = 3;
+            countdownElement.textContent = seconds;
+
+            // Countdown timer
+            const countdown = setInterval(function() {
+                seconds--;
+                countdownElement.textContent = seconds;
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    // Redirect to portfolio site
+                    window.location.href = '[https://your-portfolio-site.com]';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
