@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio showcase video by [Your Name]">
-    <meta name="twitter:card" content="player"> <!-- For X video preview -->
+    <meta name="description" content="Portfolio showcase video by Saka">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="player">
     <meta name="twitter:title" content="Saka Portfolio Video">
     <meta name="twitter:description" content="Watch my latest work!">
-    <meta name="twitter:image" content="https://ima-3cg5.onrender.com"> 
-    <meta name="twitter:player" content="https://port-njjc.onrender.com/">
-    <meta name="twitter:player:width" content="640">
+    <meta name="twitter:image" content="https://port-njjc.onrender.com/thumbnail.jpeg"> <!-- Absolute URL -->
+    <meta name="twitter:player" content="https://port-njjc.onrender.com/"> <!-- Page URL -->
+    <meta name="twitter:player:stream" content="https://port-njjc.onrender.com/20251001_104912.mp4"> <!-- Direct video URL -->
+    <meta name="twitter:player:width" content="640"> <!-- Match your video resolution -->
     <meta name="twitter:player:height" content="360">
-    <title> Portfolio Video</title>
+    <title>Saka Portfolio Video</title>
     <style>
         body {
             margin: 0;
@@ -39,9 +41,9 @@
     </style>
 </head>
 <body>
-    <video autoplay controls>
-        <source src="20251001_104912.mp4" type="video/mp4" >
-        Your browser doesn't support video playback.
+    <video autoplay controls playsinline>
+        <source src="https://port-njjc.onrender.com/20251001_104912.mp4" type="video/mp4">
+        Your browser doesn't support video playback. <a href="https://your-portfolio-site.com">View my portfolio</a>.
     </video>
     <div id="redirect-message">Redirecting to portfolio in <span id="countdown">3</span> seconds...</div>
     <script>
@@ -50,19 +52,16 @@
         const countdownElement = document.getElementById('countdown');
 
         video.addEventListener('ended', function() {
-            // Show redirect message
             redirectMessage.style.display = 'block';
-            let seconds = 1;
+            let seconds = 3; // Adjusted for better UX
             countdownElement.textContent = seconds;
 
-            // Countdown timer
             const countdown = setInterval(function() {
                 seconds--;
                 countdownElement.textContent = seconds;
                 if (seconds <= 0) {
                     clearInterval(countdown);
-                    // Redirect to portfolio site
-                    window.location.href = 'https://git-scm.com/install/windows';
+                    window.location.href = 'portfolio.html'; // Replace with actual portfolio URL
                 }
             }, 1000);
         });
